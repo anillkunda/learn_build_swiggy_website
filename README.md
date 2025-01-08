@@ -1,1 +1,1 @@
-# learn_build_swiggy_website
+# learning_practice_javascript
