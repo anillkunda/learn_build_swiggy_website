@@ -85,6 +85,29 @@ const yearsUntilRetirement = (birthYear, firstName) => {
 console.log(yearsUntilRetirement(1990, 'Anil'));
 console.log(yearsUntilRetirement(1991, 'Manoj'));
 
+// ----- ** Exercise - 1
+
+const clacAverage = (a, b, c) => (a + b + c) / 3;
+console.log(clacAverage(3, 4, 5));
+
+let scoreDolphins = clacAverage(44, 23, 71);
+let scoreKoalas = clacAverage(65, 54, 49);
+console.log(scoreDolphins, scoreKoalas);
+
+const checkWinner = function (avgDolphins, avgKoalas) {
+  if (avgDolphins >= 2 * avgKoalas) {
+    console.log(`Dolphins win 🏆 (${avgDolphins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolphins) {
+    console.log(`Dolphins win 🏆 (${avgKoalas} vs. ${avgDolphins})`);
+  } else {
+    console.log('No team wins...');
+  }
+};
+
+checkWinner(scoreDolphins, scoreKoalas);
+
+checkWinner(576, 111);
+
 // ------- ** Arrays
 
 // --- Arrays in javascript are data structures used to store multiple values in single variable.
@@ -104,7 +127,6 @@ const firstName = 'Anil';
 // console.log(anil);
 
 // Exercise
-
 const calcAge5 = function (birthYear) {
   return 2025 - birthYear;
 };
@@ -147,6 +169,20 @@ console.log(friends.indexOf('Mallesh'));
 console.log(friends.includes('Gagan'));
 console.log(friends.includes('Pradeep'));
 
+// ----- ** Exercise - 2
+
+const calcTip = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+// const calcTip = (bill) => bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+
+const bills = [125, 555, 44];
+const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+const totals = [bills[0] + tips[0], bills[1] + tips[1], bills[2] + tips[2]];
+
+console.log(bills, tips, totals);
+
 // ------- ** Objects
 
 // --- Objects in JavaScript are data structures that store collections of key-value pairs.
@@ -167,7 +203,6 @@ console.log(manoj.lastName);
 console.log(manoj.age);
 
 // Bracket Notation []
-
 console.log(manoj['firstName']);
 console.log(manoj['lastName']);
 console.log(manoj['age']);
@@ -219,7 +254,8 @@ console.log(gagan.age);
 
 console.log(gagan.getSummary());
 
-// BMI Calculator
+// ----- ** Exercise - 3
+
 const mark = {
   fullName: 'Mark Miller',
   mass: 78,
@@ -249,7 +285,7 @@ if (mark.bmi > john.bmi) {
   );
 } else if (john.bmi > mark.bmi) {
   console.log(
-    `${john.fullName}'s (${jahn.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`
+    `${john.fullName}'s (${john.bmi}) is higher than ${mark.fullName}'s (${mark.bmi})!`
   );
 }
 
@@ -313,7 +349,6 @@ for (let i = 0; i < anil.length; i++) {
 }
 
 // Exercise
-
 const yearsArray = [2000, 2002, 2004, 2006];
 const agesArray = [];
 
@@ -369,3 +404,21 @@ while (dice !== 6) {
   dice = Math.trunc(Math.random() * 6) + 1;
   if (dice === 6) console.log('Loop is about to end...');
 }
+
+// ----- ** Exercise - 4
+
+const calcTip2 = function (bill) {
+  return bill >= 50 && bill <= 300 ? bill * 0.15 : bill * 0.2;
+};
+
+const bills2 = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
+const tips2 = [];
+const totals2 = [];
+
+for (let i = 0; i < bills2.length; i++) {
+  const tip = calcTip2(bills2[i]);
+  tips2.push(tip);
+  totals2.push(tip + bills2[i]);
+}
+
+console.log(bills2, tips2, totals2);
